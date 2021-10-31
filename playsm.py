@@ -5,17 +5,16 @@ import requests
 
 # constants
 CODE_REGIONS = [
-    "ZA", "ar", "CZ", "DK", "AT", "CH", "DE", "GR", "GB", "US", "ES", "MX", "EE", "FI", "CA", "FR", "HR", "HU", "ID", "IS", "IT", 
-    "JP", "KH", "KR", "la", "LT", "LV", "NO", "NL", "NO", "NZ", "PL", "BR", "PT", "RO", "RU", "SK", "SI", "SE", "TH", "TR",
-    "UA", "VN", "TW"
+    "ZA", "AR", "CZ", "DK", "AT", "CH", "DE", "GR", "GB", "US", "ES", "MX", "EE", "FI", "CA", "FR", "HR", "HU", "ID", "IS", "IT", "JP", 
+    "KH", "KR", "LA", "LT", "LV", "NL", "NO", "NZ", "PL", "BR", "PT", "RO", "RU", "SK", "SI", "SE", "TH", "TR", "UA", "VN", "TW"
 ]
 
 NAMES_REGIONS = [
     "Afrikaans", "Argentina", "Czech", "Danish", "German (Austria)", "German (Switzerland)", "German (Germany)", "Greek",
     "English (UK)", "English (US)", "Spanish (Spain)", "Spanish (Mexico)", "Estonian", "Finnish", "French (Canada)", "French (France)",
     "Croatian", "Hungarian", "Indonesian", "Icelandic", "Italian", "Japanese", "Cambodja", "Korean", "Latin", "Lithuanian", "Latvian",
-    "Norwegian (Bokmål)", "Nederlands", "Norwegian (Nynorsk)", "New Zealand", "Polish", "Português (Brasil)", "Português (Portugal)", 
-    "Romanian", "Russian", "Slovak", "Slovenian", "Swedish", "Thai", "Turkish", "Ukrainian", "Vietnamese", "Chinese (Taiwan)"
+    "Nederlands", "Norwegian (Nynorsk)", "New Zealand", "Polish", "Português (Brasil)", "Português (Portugal)", "Romanian", "Russian", 
+    "Slovak", "Slovenian", "Swedish", "Thai", "Turkish", "Ukrainian", "Vietnamese", "Chinese (Taiwan)"
 ]
 
 class PlaySearchMovie(object):
