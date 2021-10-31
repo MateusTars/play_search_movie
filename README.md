@@ -27,5 +27,5 @@ Iniciando a busca pelo filme: Dune
 
 ## Observação:
 
-Como isso é um PROJETO ANTIGO não existe garantias que sempre estará em funcionamento,
+Como está ferramenta é um PROJETO ANTIGO não existe garantias que sempre estará em funcionamento,
 pelo simples motivo das buscas serem análisadas em páginas html utilizando regex.
