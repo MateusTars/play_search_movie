@@ -31,12 +31,12 @@ class PlaySearchMovie(object):
         })
 
     def print_help(self):
-        print("usage: python playsm.py [movie_name]")
+        print("Usage: python playsm.py [movie_name]")
         return 1
 
     def release_verify(self, rname, rcode):
-        print("\nverificando filme na região: {0} - {1}".format(rname, rcode))
-        print("região store: {0}".format(self.store.format(rcode)))
+        print("\nVerificando filme na região: {0} - {1}".format(rname, rcode))
+        print("Região store: {0}".format(self.store.format(rcode)))
         resp = self.session.get(url=self.news.format(rcode))
         search_data = re.search(f"{self.name}([^+]*)", resp.text, re.IGNORECASE)
         if not search_data:
@@ -67,7 +67,7 @@ class PlaySearchMovie(object):
             split = regex.split(',"')[1][:-2]
             return split
         except:
-            return "não disponível"
+            return "Não disponível"
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
