@@ -1,16 +1,17 @@
 import re
 import sys
+import string
 import requests
 
 # constants
 CODE_REGIONS = [
-    "ZA", "ar", "CZ", "GB", "DK", "AT", "CH", "DE", "GR", "GB", "US", "ES", "MX", "EE", "FI", "CA", "FR", "HR", "HU", "ID", "IS",
-    "IT", "JP", "KH", "KR", "la", "LT", "LV", "NO", "NL", "NO", "NZ", "PL", "BR", "PT", "RO", "RU", "SK", "SI", "SE", "TH", "TR",
+    "ZA", "ar", "CZ", "DK", "AT", "CH", "DE", "GR", "GB", "US", "ES", "MX", "EE", "FI", "CA", "FR", "HR", "HU", "ID", "IS", "IT", 
+    "JP", "KH", "KR", "la", "LT", "LV", "NO", "NL", "NO", "NZ", "PL", "BR", "PT", "RO", "RU", "SK", "SI", "SE", "TH", "TR",
     "UA", "VN", "TW"
 ]
 
 NAMES_REGIONS = [
-    "Afrikaans", "Argentina", "Czech", "País de Gales", "Danish", "German (Austria)", "German (Switzerland)", "German (Germany)", "Greek",
+    "Afrikaans", "Argentina", "Czech", "Danish", "German (Austria)", "German (Switzerland)", "German (Germany)", "Greek",
     "English (UK)", "English (US)", "Spanish (Spain)", "Spanish (Mexico)", "Estonian", "Finnish", "French (Canada)", "French (France)",
     "Croatian", "Hungarian", "Indonesian", "Icelandic", "Italian", "Japanese", "Cambodja", "Korean", "Latin", "Lithuanian", "Latvian",
     "Norwegian (Bokmål)", "Nederlands", "Norwegian (Nynorsk)", "New Zealand", "Polish", "Português (Brasil)", "Português (Portugal)", 
@@ -48,7 +49,7 @@ class PlaySearchMovie(object):
         href_all = re.findall(r'href="/store/movies/details/(.+?)"', data, re.IGNORECASE)
         url = False
         for href in href_all:
-            if href[:1].startswith(self.name[:1]):
+            if self.is_similar(href.split('?id')[0], self.name) >= 0.8:
                 url = self.movie.format(href, rcode)
                 break
         if url:
@@ -68,6 +69,13 @@ class PlaySearchMovie(object):
             return split
         except:
             return "Não disponível"
+
+    def is_similar(self, na, nb):
+        counter = 0
+        for l in string.ascii_lowercase:
+            counter += abs(na.lower().count(l) - nb.lower().count(l))
+        total = len(na) + len(nb)
+        return (total - counter) / total
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
