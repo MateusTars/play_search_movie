@@ -39,10 +39,10 @@ class PlaySearchMovie(object):
         print("Região store: {0}".format(self.store.format(rcode)))
         resp = self.session.get(url=self.news.format(rcode))
         search_data = re.search(f"{self.name}([^+]*)", resp.text, re.IGNORECASE)
-        if not search_data:
-            return False, []
-        else:
+        if search_data:
             return True, search_data[1]
+        else:
+            return False, []
 
     def get_movie_and_info(self, data, rname, rcode):
         href_all = re.findall(r'href="/store/movies/details/(.+?)"', data, re.IGNORECASE)
