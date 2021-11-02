@@ -9,7 +9,7 @@ CODE_REGIONS = [
     "KH", "KR", "LA", "LT", "LV", "NL", "NO", "NZ", "PL", "BR", "PT", "RO", "RU", "SK", "SI", "SE", "TH", "TR", "UA", "VN", "TW"
 ]
 
-NAMES_REGIONS = [
+NAME_REGIONS = [
     "Afrikaans", "Argentina", "Czech", "Danish", "German (Austria)", "German (Switzerland)", "German (Germany)", "Greek",
     "English (UK)", "English (US)", "Spanish (Spain)", "Spanish (Mexico)", "Estonian", "Finnish", "French (Canada)", "French (France)",
     "Croatian", "Hungarian", "Indonesian", "Icelandic", "Italian", "Japanese", "Cambodja", "Korean", "Latin", "Lithuanian", "Latvian",
@@ -38,7 +38,7 @@ class PlaySearchMovie(object):
         print("\nVerificando filme na região: {0} - {1}".format(rname, rcode))
         print("Região store: {0}".format(self.store.format(rcode)))
         resp = self.session.get(url=self.news.format(rcode))
-        search_data = re.search(f"{self.name}([^+]*)", resp.text, re.IGNORECASE)
+        search_data = re.search(f'title="{self.name}([^^]*)', resp.text, re.IGNORECASE)
         if search_data:
             return True, search_data[1]
         else:
