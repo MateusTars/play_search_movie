@@ -83,7 +83,7 @@ if __name__ == "__main__":
     print("Iniciando a busca pelo filme: {0}".format(movie_name))
     client = PlaySearchMovie(movie_name)
     array = []
-    for rname, rcode in zip(NAMES_REGIONS, CODE_REGIONS):
+    for rname, rcode in zip(NAME_REGIONS, CODE_REGIONS):
         success, data = client.release_verify(rname, rcode)
         if success:
             _success, movie_url, audios, subtitles = client.get_movie_and_info(data, rname, rcode)
