@@ -1,8 +1,16 @@
+## DESCONTINUADO
+
+## ATENÇÃO:
+Devido a uma nova atualização do Google o script pode não funcionar mais como esperado.<br />
+No segundo semestre de 2021 o Google começou a aplicar/testar uma versão moderna para o site da Play Store. <br />
+A nova versão já está disponível em algumas regiões. <br />
+[Imagem prévia da nova versão](https://user-images.githubusercontent.com/47614139/140231341-86c949cf-95b8-40a6-ae7c-38c52cf0374f.png) <br />
+
 # play_search_movie
 Ferramenta desenvolvida com Python, para buscar novos lançamentos de filmes em algumas regiões na plataforma [Google Play](https://play.google.com/store/movies).
 
 ## Descrição:
-Esse projeto tem como finalidade TENTAR e FACILITAR a busca por novos filmes na Google Play,
+Esse projeto tem como finalidade TENTAR e FACILITAR a busca por novos filmes no Google Play,
 e verificar quais idiomas de áudios e legendas estão disponíveis para o filme desejado, 
 e em qual região o mesmo está disponível.
 
